@@ -1,0 +1,11 @@
+#book-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 3%;
+    row-gap: 1rem;
+}
+.book-preview-image{
+    width: 100%;
+    height: auto;
+}
