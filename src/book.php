@@ -8,8 +8,9 @@
     <div id="navbar">
         <div id="navbar-title"><a href="index.php">Moje knihovna</a></div>
         <div id="navbar-add-btn">
-            <a href="print-book.php" target="_blank">
+            <a href="print-book.php?id=<?php echo $_GET['id'];?>" target="_blank">
                 <img src="images/printing.svg" alt="add book">
+                <div id="print-info">Při tisku možná bude potřeba v nastavní vypnout tisk záhlaví a zápatí</div>
             </a>
         </div>
     </div>

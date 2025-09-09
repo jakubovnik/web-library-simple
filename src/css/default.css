@@ -19,6 +19,9 @@ body{
     color: rgb(245, 255, 255);
     font-size: 2.5rem;
 }
+#navbar-add-btn, #navbar-add-btn *{
+    position: relative;
+}
 #navbar-add-btn img, #navbar-add-btn * img{
     height: 3rem;
     width: auto;
@@ -117,6 +120,22 @@ body{
     font-size: 1.1rem;
     border-radius: 2px;
     padding: 10px 1vw;
+}
+#print-info{
+    position: absolute;
+    top: 2rem;
+    right: 0;
+    width: 10vw;
+    color: rgb(245, 255, 255);
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+}
+#navbar-add-btn:hover, #navbar-add-btn *:hover{
+    #print-info{
+        display: block;
+    }
 }
 /* Add book ------------------------------------------------------------- Add book */
 #add-book-container{
