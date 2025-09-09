@@ -14,12 +14,20 @@
         </div>
     </div>
     <div id="book-container">
-        <div class="book-preview">
-            <img src="images/preview-example.png" alt="bruh" class="book-preview-image">
-            <div class="book-preview-overlay">
-                <div class="book-preview-title">example</div>
-            </div>
-        </div>
+        <?php
+            require "php/dbconnect.php";
+            $sql = "SELECT * FROM `books` ORDER BY id";
+            $result = $conn->query($sql);
+            while($row = $result->fetch_assoc()){
+                echo '<div id="book-preview-'.$row['id'].'" class="book-preview">';
+                echo '  <img src="'.$row['image_path'].'" class="book-preview-image">';
+                echo '  <div class="book-preview-overlay">';
+                echo '      <div class="book-preview-title">'.$row['title'].'</div>';
+                echo '  </div>';
+                echo '</div>';
+            }
+            $conn->close();
+        ?>
     </div>
 <script>
 
