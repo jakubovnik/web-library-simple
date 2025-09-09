@@ -80,11 +80,46 @@ body{
     overflow-x: visible;
     background-color: rgba(0, 0, 0, 0.3);
 }
+/* Book itself ------------------------------------------------------- Book itself */
+#book-details{
+    background-color: rgb(75, 75, 75);
+    width: 18vw;
+    height: fit-content;
+    padding: 2vh 2vw;
+    border-radius: 5px;
+}
+.book-detail-text{
+    font-size: 1rem;
+    max-width: 100%;
+    padding: 5px;
+}
+#book-title{
+    font-size: 3rem;
+}
+#book-author{
+    font-size: 2rem;
+    color: rgba(245, 255, 255, 0.8);
+}
+#book-preview-image{
+    width: 100%;
+    height: auto;
+}
+#book-container{
+    display: flex;
+    flex-direction: row;
+}
+#book-itself{
+    background-color: white;
+    width: 48vw;
+    color: black;
+    margin: 2vw;
+    margin-top: 0;
+    font-size: 1.1rem;
+    border-radius: 2px;
+    padding: 10px 1vw;
+}
 /* Add book ------------------------------------------------------------- Add book */
 #add-book-container{
-    /* display: flex;
-    flex-direction: row;
-    align-items: center; */
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     width: 90%;
