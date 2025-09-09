@@ -20,11 +20,23 @@
         <div id="book-details">
             <?php
                 require "php/dbconnect.php"; // fetches book data based on the ID from the superglobal variable GET and outputs it as elements into the side panel
-                $sql = "SELECT * FROM `books` WHERE id=".$_GET['id'];
+                $sql = "SELECT 
+                            books.id as id,
+                            title,
+                            author,
+                            `release`,
+                            price,
+                            genre.name as genre,
+                            rating,
+                            image_path
+                        FROM `books`
+                        INNER JOIN `genre` ON `books`.`genre_id`=`genre`.`id`
+                        WHERE books.id=".$_GET['id'];
                 $result = $conn->query($sql);
                 $row = $result->fetch_assoc();
                 echo '<div id="book-title" class="book-detail-text">'.$row['title'].'</div>';
                 echo '<div id="book-author" class="book-detail-text">'.$row['author'].'</div>';
+                echo '<div id="book-genre" class="book-detail-text">'.$row['genre'].'</div>';
                 echo '<div id="book-release" class="book-detail-text">Rok vydání: '.$row['release'].'</div>';
                 echo '<div id="book-price" class="book-detail-text">Cena: '.$row['price'].' Kč</div>';
                 echo '<div id="book-rating" class="book-detail-text">Hodnocení: '.$row['rating'].'⭐</div>';
