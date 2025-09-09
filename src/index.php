@@ -6,7 +6,7 @@
 </head>
 <body>
     <div id="navbar">
-        <div id="navbar-title">Moje knihovna</div>
+        <div id="navbar-title"><a href="index.php">Moje knihovna</a></div>
         <div id="navbar-add-btn">
             <a href="add-book.php">
                 <img src="images/plus-circle.svg" alt="add book">

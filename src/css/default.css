@@ -6,7 +6,6 @@ body{
     display: flex;
     flex-direction: column;
 }
-/* Main Page ----------------------------------------------------------- Main Page */
 #navbar{
     display: flex;
     flex-direction: row;
@@ -14,21 +13,25 @@ body{
     justify-content: space-between;
     padding: 2% 5%;
 }
-#navbar-title{
+#navbar-title a, #navbar-title a:link, #navbar-title a:visited, #navbar-title a:hover, #navbar-title a:active{
+    text-decoration: none;
+    color: rgb(245, 255, 255);
     font-size: 3rem;
 }
-#navbar-add-btn a img{
+#navbar-add-btn * img{
     height: 4rem;
     width: auto;
-    filter: invert(1);
+    /* filter: invert(1); */
 }
+/* Main Page ----------------------------------------------------------- Main Page */
 #book-container{
     width: 90%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     column-gap: 2%;
     row-gap: 2rem;
     margin: 4%;
+    margin-top: 0;
     padding: 1%;
     background-color: rgb(75, 75, 75);
     border-radius: 5px;
@@ -36,7 +39,7 @@ body{
 .book-preview{
     position: relative;
     box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.4);
-    transition: box-shadow 0.2s;
+    transition: box-shadow 0.3s;
 }
 .book-preview:hover{
     box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.4);
@@ -58,5 +61,54 @@ body{
     padding: 2%;
 }
 .book-preview-title{
-    font-size: 2vw;
+    font-size: 1.5rem;
+    padding: 1%;
+    max-width: 98%;
+    overflow-x: hidden;
+    height: min-content;
+    transition: background-color 0.5s;
+    border-radius: 5px;
+}
+.book-preview:hover .book-preview-overlay .book-preview-title{
+    max-width: none;
+    overflow-x: visible;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+/* Add book ------------------------------------------------------------- Add book */
+#add-book-container{
+    /* display: flex;
+    flex-direction: row;
+    align-items: center; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 90%;
+    margin: 4%;
+    margin-top: 0;
+    margin-bottom: 1%;
+    padding: 1%;
+    background-color: rgb(75, 75, 75);
+    border-radius: 5px;
+}
+.input-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 6px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+}
+#input-content{
+    border: none;
+    background-color: rgb(75, 75, 75);
+    border-radius: 5px;
+    resize: none;
+    outline: none;
+    width: 90%;
+    height: 50vh;
+    margin: 4%;
+    margin-top: 0;
+    padding: 1%;
+    color: rgb(245, 255, 255);
 }
