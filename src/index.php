@@ -13,18 +13,20 @@
             </a>
         </div>
     </div>
-    <div id="book-container">
+    <div id="library-container">
         <?php
             require "php/dbconnect.php";
             $sql = "SELECT * FROM `books` ORDER BY id";
             $result = $conn->query($sql);
             while($row = $result->fetch_assoc()){
-                echo '<div id="book-preview-'.$row['id'].'" class="book-preview">';
+                // echo '<a href="book.php?id='.$row['id'].'">';
+                echo '<a id="book-preview-'.$row['id'].'" class="book-preview" href="book.php?id='.$row['id'].'">';
                 echo '  <img src="'.$row['image_path'].'" class="book-preview-image">';
                 echo '  <div class="book-preview-overlay">';
                 echo '      <div class="book-preview-title">'.$row['title'].'</div>';
                 echo '  </div>';
-                echo '</div>';
+                echo '</a>';
+                // echo '</a>';
             }
             $conn->close();
         ?>
