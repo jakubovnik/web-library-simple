@@ -18,10 +18,13 @@ body{
     color: rgb(245, 255, 255);
     font-size: 3rem;
 }
-#navbar-add-btn * img{
+#navbar-add-btn img, #navbar-add-btn * img{
     height: 4rem;
     width: auto;
     /* filter: invert(1); */
+}
+#navbar-add-btn:hover{
+    cursor:pointer;
 }
 /* Main Page ----------------------------------------------------------- Main Page */
 #book-container{
